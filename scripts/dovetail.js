@@ -49,7 +49,7 @@ for (button of allButtons) {
     })
     // Only if something was found, add the object to the
     // shopping cart array
-    if (foundProduct !== null) {
+      if (foundProduct !== undefined) {
         const item = shoppingCart.find(item => item.id === foundProduct.id)
         if (item !== undefined) {
           item.qty++

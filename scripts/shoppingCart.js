@@ -8,13 +8,13 @@ const displayShoppingCart = () => {
 
     shoppingCart.forEach((product, idx) => {
 
-        product.price = product.qty * product.price
+      const price = product.qty * product.price
 
         cartEl.innerHTML += `
         <section class="shoppingCart__item">
         <div>${product.name}</div>
         <div>${product.qty}</div>
-        <div>${product.price.toLocaleString("en-US", {
+        <div>${price.toLocaleString("en-US", {
           style: "currency",
           currency: "USD"
         })}</div>
@@ -22,7 +22,7 @@ const displayShoppingCart = () => {
         <button id="${idx}" class="cart_removeButton">Remove</button>
         </section>
         `
-        grandTotal += product.price
+        grandTotal += price
     })
 
     cartEl.innerHTML += `
